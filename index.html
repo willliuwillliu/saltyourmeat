@@ -1,0 +1,161 @@
+<!doctype html>
+<html>
+    <script type ="text/javascript" src="index.js"></script>
+    <link rel="stylesheet" id="stylesheet" href="style.css">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@300;400;700&family=Source+Sans+Pro:ital,wght@0,300;0,400;0,700;1,300;1,400;1,700&display=swap');
+    </style>
+
+    <header>
+        <h1 id="logo">Salt Your Meat</h1>
+        <nav>
+            <ul>
+                <li>
+                    <a href="index.html">Calculator</a>
+                    <a href="index.html/#about">About</a>
+                    <a href="faq.html">Salting FAQ's</a>
+                </li>
+            </ul>
+        </nav>
+    </header>
+
+    <body>
+        <form id="inputs" class="container" autocomplete="off">
+            <h2>What kind of meat?</h2>
+            <div class="form-row">
+                <div class="buttons">
+                    <label class="radio"> 
+                        <input type="radio" id="boneless" name="meatSelection" value="boneless">
+                        <span class="checkmark hvr-sweep-to-bottom">Boneless</span>
+                        <span class="tooltipleft">E.g., Chicken breast, strip steak, or pork loin</span>
+                    </label>
+                    <label class="radio"> 
+                        <input type="radio" id="fish" name="meatSelection" value="fish">
+                        <span class="checkmark hvr-sweep-to-bottom">Fish</span>
+                    </label>
+                    <label class="radio"> 
+                        <input type="radio" id="ground" name="meatSelection" value="ground">
+                        <span class="checkmark hvr-sweep-to-bottom">Ground</span>
+                    </label>
+                    <label class="radio"> 
+                        <input type="radio" id="bonelin" name="meatSelection" value="bonein">
+                        <span class="checkmark hvr-sweep-to-bottom">Bone-in</span>
+                        <span class="tooltipright">E.g., Ribs, whole chicken, or lamb chops</span>
+                    </label>
+
+                </div>
+            </div>
+
+            <h2>How much does the meat weigh?</h2>
+            <div id="meatWeightContainer">
+                <input type="number" id="meatWeight" name="meatWeight">
+                <label class="weightradio"> 
+                    <input type="radio" id="meatWeightLb" name="meatWeightSelection" class="radio" value="lbs">
+                    <div  class="checkmark meatWeightLb hvr-sweep-to-bottom">lbs</div>
+                </label>
+                <label class="weightradio"> 
+                    <input type="radio" id="meatWeightKg" name="meatWeightSelection" class="radio" value="kgs">
+                    <div class="checkmark meatWeightKg hvr-sweep-to-bottom">kgs</div>
+                </label>
+                <div id="weightSelectionAlert">
+                    <p>Please select lbs or kgs</p>
+                </div>
+            </div>
+
+            <h2>What kind of salt?</h2>
+            <div class="form-row" id="saltSelection">
+                <div class="buttons">
+                    <label class="radio"> 
+                        <input type="radio" id="fineSalt" name="saltSelection" value="Fine salt">
+                        <span class="checkmark hvr-sweep-to-bottom">Fine salt</span>
+                    </label>
+                    <label class="radio"> 
+                        <input type="radio" id="seaSalt" name="saltSelection" value="Sea salt">
+                        <span class="checkmark hvr-sweep-to-bottom">Sea salt</span>
+                    </label>
+                    <label class="radio"> 
+                        <input type="radio" id="maldon" name="saltSelection" value="Maldon">
+                        <span class="checkmark hvr-sweep-to-bottom">Maldon<span>
+                    </label>
+                    <label class="radio"> 
+                        <input type="radio" id="selGris" name="saltSelection" value="Sel gris">
+                        <span class="checkmark hvr-sweep-to-bottom">Sel gris</span>
+                    </label>
+                    <label class="radio"> 
+                        <input type="radio" id="table" name="saltSelection" value="Table salt">
+                        <span class="checkmark hvr-sweep-to-bottom">Table</span>
+                    </label>
+                    <label class="radio"> 
+                        <input type="radio" id="mortons" name="saltSelection" value="Morton's kosher">
+                        <span class="checkmark hvr-sweep-to-bottom">Morton's kosher</span>
+                    </label>
+                    <label class="radio"> 
+                        <input type="radio" id="diamond" name="saltSelection" value="Diamond kosher">
+                        <span class="checkmark hvr-sweep-to-bottom">Diamond kosher</span>
+                    </label>
+                </div>
+            </div>
+            
+            <h2>How salty do you like your food?</h2>
+            <div class="form-row">
+                <div class="buttons">
+                    <label class="radio"> 
+                        <input type="radio" id="lessSalty" name="saltPreference" value="lessSalty">
+                        <span class="checkmark hvr-sweep-to-bottom">Less Salty</span>
+                    </label>
+                    <label class="radio"> 
+                        <input type="radio" id="normalSalty" name="saltPreference" value="normalSalty">
+                        <span class="checkmark hvr-sweep-to-bottom">Normal</span>
+                    </label>
+                    <label class="radio"> 
+                        <input type="radio" id="moreSalty" name="saltPreference" value="moreSalty">
+                        <span class="checkmark hvr-sweep-to-bottom">More Salty</span>
+                    </label>
+                </div>
+            </div>
+
+        </form>
+        <div class="output container">
+            <h2>Salting directions:</h2>
+            <p id="outputDescription">Please fill out form</p>
+            <p id="outputNote"></p>
+        </div>
+            <!-- the Layer when feedback pops up  -->
+        <div id="greybox"></div>
+
+        <div id="feedback">
+            <h3>Last time you were here, we recommended:</h3>
+            <p id="feedbackLastResult"></p>
+            <ul id="feedbackInputs"></ul>
+            <div class="buttons feedbackButtons">
+                <label class="radio"> 
+                    <input type="radio" id="notSaltyEnough" name="feedback" value="Not salty enough">
+                    <span class="checkmark hvr-sweep-to-bottom">Not salty enough</span>
+                </label>
+                <label class="radio"> 
+                    <input type="radio" id="justRight" name="feedback" value="Just right">
+                    <span class="checkmark hvr-sweep-to-bottom">Just right</span>
+                </label>
+                <label class="radio"> 
+                    <input type="radio" id="tooSalty" name="feedback" value="Too salty">
+                    <span class="checkmark hvr-sweep-to-bottom">Too salty</span>
+                </label>
+                <label class="radio"> 
+                    <input type="radio" id="tooSalty" name="feedback" value="Too salty">
+                    <span class="checkmark hvr-sweep-to-bottom">I did not follow the last suggestion</span>
+                </label>
+                <p id="feedbackThanks"></p>
+            </div>
+            <button class="close">Close</button>
+        </div>
+        <img id="saltbg" src="saltbg.png">
+
+        <div id="about" class="container">
+            <h2>About</h2>
+            <p>
+                Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum
+            </p>
+            <p>Contrary to popular belief, Lorem Ipsum is not simply random text. It has roots in a piece of classical Latin literature from 45 BC, making it over 2000 years old. Richard McClintock, a Latin professor at Hampden-Sydney College in Virginia, looked up one of the more obscure Latin words, consectetur, from a Lorem Ipsum passage, and going through the cites of the word in classical literature, discovered the undoubtable source. Lorem Ipsum comes from sections 1.10.32 and 1.10.33 of "de Finibus Bonorum et Malorum" (The Extremes of Good and Evil) by Cicero, written in 45 BC. This book is a treatise on the theory of ethics, very popular during the Renaissance. The first line of Lorem Ipsum, "Lorem ipsum dolor sit amet..", comes from a line in section 1.10.32.</p>
+        </div>
+    </body>
+</html>

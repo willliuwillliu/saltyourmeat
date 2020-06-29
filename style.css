@@ -1,0 +1,461 @@
+h1,
+h2,
+h3 {
+  color: #ecebe4;
+  font-family: "Roboto Slab", serif;
+  font-weight: 300;
+}
+
+h3 {
+  font-size: 32px;
+  margin: 15px 0px 15px 0px;
+}
+
+span,
+p,
+label {
+  color: #ecebe4;
+  font-family: "Source Sans Pro", sans-serif;
+}
+
+header {
+  height: 100px;
+  background-color: #08213b;
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  margin-bottom: 30px;
+}
+header h1 {
+  font-size: 48px;
+  font-family: "Roboto Slab", serif;
+  font-weight: 700;
+  color: #ecebe4;
+  margin: 5px 0px 10px 0px;
+}
+header nav ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+header nav ul a {
+  text-transform: uppercase;
+  font-family: "Source Sans Pro", sans-serif;
+  text-decoration: none;
+  color: #ecebe4;
+  font-size: 18px;
+  margin: 0px 5px 0px 5px;
+  transition: 0.3s;
+}
+header nav ul a:hover {
+  font-weight: 700;
+}
+
+body {
+  background-color: #08213b;
+}
+
+#greybox {
+  position: fixed;
+  opacity: 0.5;
+  height: 100vh;
+  width: 100vw;
+  background-color: grey;
+  z-index: 1;
+  top: 0;
+  left: 0;
+}
+
+#inputs {
+  text-align: center;
+  border: 2px double #ecebe4;
+  max-width: 560px;
+  padding: 20px;
+  box-sizing: border-box;
+}
+
+.container {
+  margin: auto;
+  max-width: 560px;
+}
+
+.form-row {
+  width: 100%;
+}
+
+.buttons {
+  margin-bottom: 20px;
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+#saltbg {
+  height: 300px;
+  position: fixed;
+  bottom: 0;
+  right: 0;
+}
+
+/* Customize the label (the radio) */
+.radio {
+  cursor: pointer;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  margin: 5px;
+  position: relative;
+}
+
+/* Hide the browser's default radio button */
+.radio input {
+  display: none;
+}
+
+/* Create a custom radio button */
+.checkmark {
+  display: inline-flex;
+  align-items: center;
+  padding: 5px;
+  border: 2.2px solid #ecebe4;
+  border-radius: 6px;
+  height: 60%;
+}
+
+/* When the radio button is checked, add a blue background */
+.radio input:checked ~ .checkmark {
+  background-color: #ecebe4;
+  color: #08213b;
+}
+
+/* Create the indicator (the dot/circle - hidden when not checked) */
+.checkmark:after {
+  content: "";
+  position: absolute;
+  display: none;
+}
+
+/* Style the indicator (dot/circle) */
+.radio .checkmark:after {
+  display: none;
+}
+
+.radio .tooltiptext, .radio .tooltipleft, .radio .tooltipright {
+  visibility: hidden;
+  width: 180px;
+  max-height: 50px;
+  border: 0.5px dashed #ecebe4;
+  color: #fff;
+  text-align: center;
+  border-radius: 6px;
+  padding: 5px;
+  /* Position the tooltip */
+  position: absolute;
+  z-index: 1;
+}
+
+.radio:hover .tooltiptext, .radio:hover .tooltipleft, .radio:hover .tooltipright {
+  visibility: visible;
+}
+
+.tooltipright {
+  top: -5px;
+  left: 120%;
+}
+
+.tooltipleft {
+  top: -5px;
+  right: 120%;
+}
+
+.radio .tooltipright::after {
+  content: " ";
+  position: absolute;
+  right: 100%;
+  /* At the bottom of the tooltip */
+  top: 50%;
+  margin-left: -5px;
+  border-width: 5px;
+  border-style: dashed;
+  border-color: transparent #ecebe4 transparent transparent;
+}
+
+.radio .tooltipleft::after {
+  content: " ";
+  position: absolute;
+  left: 103%;
+  /* At the bottom of the tooltip */
+  top: 50%;
+  margin-left: -5px;
+  border-width: 5px;
+  border-style: dashed;
+  border-color: transparent transparent transparent #ecebe4;
+}
+
+.hvr-sweep-to-bottom {
+  display: inline-flex;
+  vertical-align: middle;
+  -webkit-transform: perspective(1px) translateZ(0);
+  transform: perspective(1px) translateZ(0);
+  box-shadow: 0 0 1px rgba(0, 0, 0, 0);
+  position: relative;
+  -webkit-transition-property: color;
+  transition-property: color;
+  -webkit-transition-duration: 0.3s;
+  transition-duration: 0.3s;
+}
+
+.hvr-sweep-to-bottom:before {
+  content: "";
+  position: absolute;
+  z-index: -1;
+  width: 101%;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: #ecebe4;
+  -webkit-transform: scaleY(0);
+  transform: scaleY(0);
+  -webkit-transform-origin: 50% 0;
+  transform-origin: 50% 0;
+  -webkit-transition-property: transform;
+  transition-property: transform;
+  -webkit-transition-duration: 0.3s;
+  transition-duration: 0.3s;
+  -webkit-transition-timing-function: ease-out;
+  transition-timing-function: ease-out;
+}
+
+.hvr-sweep-to-bottom:hover,
+.hvr-sweep-to-bottom:focus,
+.hvr-sweep-to-bottom:active {
+  color: #08213b;
+}
+
+.hvr-sweep-to-bottom:hover:before,
+.hvr-sweep-to-bottom:focus:before,
+.hvr-sweep-to-bottom:active:before {
+  -webkit-transform: scaleY(1);
+  transform: scaleY(1);
+}
+
+/* Customize the label (the radio) */
+.weightradio {
+  cursor: pointer;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  margin: 5px;
+}
+
+/* Hide the browser's default radio button */
+.weightradio input {
+  display: none;
+}
+
+/* Create a custom radio button */
+.weightradio .checkmark {
+  padding: 5px;
+  height: 12.5px;
+  width: 20px;
+  display: inline-flex;
+  justify-content: flex-end;
+}
+
+/* When the radio button is checked, add a blue background */
+.weightradio input:checked ~ .checkmark {
+  color: #08213b;
+  background-color: #ecebe4;
+}
+
+/* Create the indicator (the dot/circle - hidden when not checked) */
+.checkmark:after {
+  content: "";
+  position: absolute;
+  display: none;
+}
+
+/* Style the indicator (dot/circle) */
+.weightradio .checkmark:after {
+  display: none;
+}
+
+#meatWeightContainer {
+  width: 91px;
+  margin: auto;
+  position: relative;
+}
+
+#meatWeight {
+  height: 50px;
+  width: 60px;
+  box-sizing: border-box;
+  border: none;
+  border-radius: 5px 0px 0px 5px;
+  background-color: #ecebe4;
+  font-size: 20px;
+  padding-left: 10px;
+  color: #08213b;
+}
+
+.meatWeightLb {
+  border-width: 1.5px 1.5px 1.5px 0px;
+  font-size: 10px;
+  padding: 3px;
+  right: 0px;
+  position: absolute;
+  border-radius: 0px 5px 0px 0px;
+}
+
+.meatWeightKg {
+  border-width: 0px 1.5px 1.5px 0px;
+  font-size: 10px;
+  padding: 3px;
+  right: 0px;
+  bottom: 0px;
+  position: absolute;
+  border-radius: 0px 0px 5px 0px;
+}
+
+#weightSelectionAlert {
+  display: none;
+  background-color: #ecebe4;
+  border-radius: 5px;
+  width: 100px;
+  position: absolute;
+  left: 120%;
+  top: -30%;
+}
+#weightSelectionAlert p {
+  color: #08213b;
+}
+
+#weightSelectionAlert::after {
+  content: " ";
+  position: absolute;
+  right: 100%;
+  top: 50%;
+  margin-left: -5px;
+  border-width: 5px;
+  border-style: dashed;
+  border-color: transparent #ecebe4 transparent transparent;
+}
+
+#meatWeight:focus {
+  outline: none;
+}
+
+.output {
+  box-sizing: border-box;
+  padding: 10px;
+  border-radius: 5px;
+  margin-top: 30px;
+  margin-right: auto;
+  margin-left: auto;
+  background-color: #ecebe4;
+  text-align: left;
+}
+
+.output h1,
+.output h2,
+.output h3,
+.output span,
+.output p {
+  color: #08213b;
+}
+.output h1,
+.output h2,
+.output h3 {
+  border-bottom: 1.2px dashed;
+}
+
+#feedback {
+  z-index: 2;
+  padding: 30px;
+  background-color: #284564;
+  border: 2px double #ecebe4;
+  position: fixed;
+  width: 50vw;
+  top: 50%;
+  left: 50%;
+  text-align: center;
+  -webkit-transform: translate(-50%, -50%);
+  -moz-transform: translate(-50%, -50%);
+  -ms-transform: translate(-50%, -50%);
+  -o-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
+  margin: auto;
+}
+#feedback h3,
+#feedback p {
+  color: #ecebe4;
+}
+#feedback p {
+  font-size: 24px;
+}
+#feedback .close {
+  margin-top: 20px;
+}
+
+@media only screen and (max-width: 500px) {
+  header {
+    margin-bottom: 10px;
+    border-bottom: 2px solid #ecebe4;
+  }
+  header h1 {
+    font-size: 32px;
+  }
+  header nav ul li a {
+    font-size: 14px;
+  }
+
+  body {
+    margin: 10px;
+  }
+
+  #inputs {
+    border: none;
+  }
+  #inputs h2 {
+    font-size: 24px;
+    margin: 10px 0px 10px 0px;
+  }
+  #inputs .checkmark {
+    padding: 2px 4px 2px 4px;
+    font-size: 12px;
+  }
+
+  .output {
+    margin: 0px auto 0px auto;
+  }
+
+  #meatWeight {
+    height: 38px;
+  }
+
+  #feedback h3 {
+    font-size: 24px;
+  }
+  #feedback p {
+    font-size: 14px;
+  }
+  #feedback .feedbackButtons {
+    margin-bottom: 0px;
+  }
+  #feedback .close {
+    margin-top: 0px;
+  }
+
+  #about {
+    text-align: left;
+  }
+
+  #saltbg {
+    display: none;
+  }
+}
+
+/*# sourceMappingURL=style.css.map */
