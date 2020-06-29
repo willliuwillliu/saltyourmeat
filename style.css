@@ -11,13 +11,6 @@ h3 {
   margin: 15px 0px 15px 0px;
 }
 
-span,
-p,
-label {
-  color: #ecebe4;
-  font-family: "Source Sans Pro", sans-serif;
-}
-
 header {
   height: 100px;
   background-color: #08213b;
@@ -54,6 +47,12 @@ header nav ul a:hover {
 body {
   background-color: #08213b;
 }
+body span,
+body p,
+body label {
+  color: #ecebe4;
+  font-family: "Source Sans Pro", sans-serif;
+}
 
 #greybox {
   display: none;
@@ -73,6 +72,12 @@ body {
   max-width: 560px;
   padding: 20px;
   box-sizing: border-box;
+  position: relative;
+}
+#inputs #saltimg {
+  position: absolute;
+  width: 50px;
+  right: 20px;
 }
 
 .container {
@@ -89,13 +94,6 @@ body {
   display: flex;
   justify-content: center;
   flex-wrap: wrap;
-}
-
-#saltbg {
-  height: 300px;
-  position: fixed;
-  bottom: 0;
-  right: 0;
 }
 
 /* Customize the label (the radio) */
@@ -140,58 +138,6 @@ body {
 /* Style the indicator (dot/circle) */
 .radio .checkmark:after {
   display: none;
-}
-
-.radio .tooltiptext, .radio .tooltipleft, .radio .tooltipright {
-  visibility: hidden;
-  width: 180px;
-  max-height: 50px;
-  border: 0.5px dashed #ecebe4;
-  color: #fff;
-  text-align: center;
-  border-radius: 6px;
-  padding: 5px;
-  /* Position the tooltip */
-  position: absolute;
-  z-index: 1;
-}
-
-.radio:hover .tooltiptext, .radio:hover .tooltipleft, .radio:hover .tooltipright {
-  visibility: visible;
-}
-
-.tooltipright {
-  top: -5px;
-  left: 120%;
-}
-
-.tooltipleft {
-  top: -5px;
-  right: 120%;
-}
-
-.radio .tooltipright::after {
-  content: " ";
-  position: absolute;
-  right: 100%;
-  /* At the bottom of the tooltip */
-  top: 50%;
-  margin-left: -5px;
-  border-width: 5px;
-  border-style: dashed;
-  border-color: transparent #ecebe4 transparent transparent;
-}
-
-.radio .tooltipleft::after {
-  content: " ";
-  position: absolute;
-  left: 103%;
-  /* At the bottom of the tooltip */
-  top: 50%;
-  margin-left: -5px;
-  border-width: 5px;
-  border-style: dashed;
-  border-color: transparent transparent transparent #ecebe4;
 }
 
 .hvr-sweep-to-bottom {
@@ -402,9 +348,33 @@ body {
   margin-top: 20px;
 }
 
+#about {
+  padding-bottom: 30px;
+  border-bottom: 2px solid #ecebe4;
+}
+#about a {
+  color: white;
+}
+
+footer {
+  margin-top: 30px;
+  margin-bottom: 30px;
+  text-align: center;
+}
+footer span {
+  color: #08213b;
+}
+footer a {
+  color: #ecebe4;
+}
+
 @media only screen and (max-width: 500px) {
+  html {
+    width: 100vw;
+  }
+
   header {
-    margin-bottom: 10px;
+    margin-bottom: 0px;
     border-bottom: 2px solid #ecebe4;
   }
   header h1 {
@@ -416,6 +386,7 @@ body {
 
   body {
     margin: 10px;
+    overflow-x: hidden;
   }
 
   #inputs {
@@ -425,17 +396,13 @@ body {
     font-size: 24px;
     margin: 10px 0px 10px 0px;
   }
-  #inputs .checkmark {
-    padding: 2px 4px 2px 4px;
-    font-size: 12px;
+  #inputs #saltimg {
+    width: 35px;
+    top: 190px;
   }
 
   .output {
     margin: 0px auto 0px auto;
-  }
-
-  #meatWeight {
-    height: 38px;
   }
 
   #feedback h3 {
@@ -453,10 +420,6 @@ body {
 
   #about {
     text-align: left;
-  }
-
-  #saltbg {
-    display: none;
   }
 }
 

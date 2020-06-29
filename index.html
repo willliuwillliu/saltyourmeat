@@ -2,9 +2,13 @@
 <html>
     <script type ="text/javascript" src="index.js"></script>
     <link rel="stylesheet" id="stylesheet" href="style.css">
+    <link rel="icon" href="favicon.png">
     <style>
         @import url('https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@300;400;700&family=Source+Sans+Pro:ital,wght@0,300;0,400;0,700;1,300;1,400;1,700&display=swap');
     </style>
+
+    <title>Dry Brining Calculator</title>
+    <meta name="description" content="This is a dry brining (meat salting) calculator. If you are asking yourself, 'How much salt should I use for my steak, chicken, or pork' then this calculator is for you!">
 
     <header>
         <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -13,7 +17,7 @@
             <ul>
                 <li>
                     <a href="index.html">Calculator</a>
-                    <a href="index.html/#about">About</a>
+                    <a href="index.html#about">About</a>
                     <a href="faq.html">Salting FAQ's</a>
                 </li>
             </ul>
@@ -22,13 +26,13 @@
 
     <body>
         <form id="inputs" class="container" autocomplete="off">
+            <img id="saltimg" src="salt.svg">
             <h2>What kind of meat?</h2>
             <div class="form-row">
                 <div class="buttons">
                     <label class="radio"> 
                         <input type="radio" id="boneless" name="meatSelection" value="boneless">
                         <span class="checkmark hvr-sweep-to-bottom">Boneless</span>
-                        <span class="tooltipleft">E.g., Chicken breast, strip steak, or pork loin</span>
                     </label>
                     <label class="radio"> 
                         <input type="radio" id="fish" name="meatSelection" value="fish">
@@ -41,7 +45,6 @@
                     <label class="radio"> 
                         <input type="radio" id="bonelin" name="meatSelection" value="bonein">
                         <span class="checkmark hvr-sweep-to-bottom">Bone-in</span>
-                        <span class="tooltipright">E.g., Ribs, whole chicken, or lamb chops</span>
                     </label>
 
                 </div>
@@ -149,16 +152,19 @@
             </div>
             <button class="close">Close</button>
         </div>
-        <img id="saltbg" src="saltbg.png">
 
         <div id="about" class="container">
             <h2>About</h2>
+            <p>This meat salting/dry brining calculator is heavily inspired by Samin's salting guidelines in <a href="https://amzn.to/2Vrgrsz">Salt Fat Acid Heat</a>. She opened my eyes to the importance of dry brining (a fancy way of saying salting in advance), and I've never looked back. </p>
             <p>
-                I read Salt Fat Acid Heat <a href="https://www.amazon.com/Salt-Fat-Acid-Heat-Mastering/dp/1476753830/ref=tmm_hrd_swatch_0?_encoding=UTF8&qid=1593411935&sr=8-1">Salt Fat Acid Heat</a> about a year ago, and it completely changed my cooking. If you're a beginner-intermediate cook, I highly recommend you check it out. The chapter on salt was the most important one for me, as it taught me to not be afraid of salt, and how to think about using it. The key takeaway from that chapter was the importance of dry brining (just a fancy way of saying salt) meat well in advance. I've always salted my food right before and while cooking it, but I was blown away by the effect that dry brining had on my steaks. It was such a game changer for me, that *not* salting a bird a day in advance has become kitchen taboo. You can read more about dry brining <a href="faq.html">here</a>.
-            </p>
-            <p>
-                This meat salting/dry brining calculator is inspired by Samin's salting guidelines in Salt Fat Acid Heat. In the same spirit as her book, I hope this website helps encourage people to salt in advance, and helps people feel comfortable with the amount of salt they should use. It's much easier to adjust salt in a soup or pasta sauce, but it's much harder to get it right on a roast that you can't taste until it comes out of the oven! 
+            This meat salting/dry brining calculator is heavily inspired by Samin's salting guidelines in Salt Fat Acid Heat. She opened my eyes to the importance of dry brining (a fancy way of saying salting in advance), and I've never looked back. 
             </p>
         </div>
     </body>
+
+    <footer>
+        <p>Made with ❤️ from Seattle</p>
+        <p>Salt Icon made by <a href="https://www.flaticon.com/authors/freepik" title="Freepik">Freepik</a></p>
+        <style>.bmc-button img{height: 18px !important;width: 20px !important;margin-bottom: 1px !important;box-shadow: none !important;border: none !important;vertical-align: middle !important;}.bmc-button{padding: 7px 15px 7px 10px !important;line-height: 15px !important;height:30px !important;text-decoration: none !important;display:inline-flex !important;color:#000000 !important;background-color:#FFFFFF !important;border-radius: 5px !important;border: 1px solid transparent !important;padding: 7px 15px 7px 10px !important;font-size: 16px !important;letter-spacing: 0.6px !important;box-shadow: 0px 1px 2px rgba(190, 190, 190, 0.5) !important;-webkit-box-shadow: 0px 1px 2px 2px rgba(190, 190, 190, 0.5) !important;margin: 0 auto !important;font-family:'Cookie', cursive !important;-webkit-box-sizing: border-box !important;box-sizing: border-box !important;}.bmc-button:hover, .bmc-button:active, .bmc-button:focus {-webkit-box-shadow: 0px 1px 2px 2px rgba(190, 190, 190, 0.5) !important;text-decoration: none !important;box-shadow: 0px 1px 2px 2px rgba(190, 190, 190, 0.5) !important;opacity: 0.85 !important;color:#000000 !important;}</style><link href="https://fonts.googleapis.com/css?family=Cookie" rel="stylesheet"><a class="bmc-button" target="_blank" href="https://www.buymeacoffee.com/willliuwillliu"><img src="https://cdn.buymeacoffee.com/buttons/bmc-new-btn-logo.svg" alt="Buy me a coffee"><span style="margin-left:5px;font-size:16px !important;">Buy me a coffee</span></a>
+    </footer>
 </html>

@@ -16,13 +16,6 @@ h3 {
   margin: 15px 0px 15px 0px;
 }
 
-span,
-p,
-label {
-  color: $accent;
-  font-family: $primaryfont;
-}
-
 header {
   height: 100px;
   background-color: $bg;
@@ -60,6 +53,12 @@ header {
 
 body {
   background-color: $bg;
+  span,
+  p,
+  label {
+    color: $accent;
+    font-family: $primaryfont;
+  }
 }
 
 #greybox {
@@ -80,6 +79,12 @@ body {
   max-width: 560px;
   padding: 20px;
   box-sizing: border-box;
+  position: relative;
+  #saltimg {
+    position: absolute;
+    width: 50px;
+    right: 20px;
+  }
 }
 
 .container {
@@ -97,14 +102,6 @@ body {
   display: flex;
   justify-content: center;
   flex-wrap: wrap;
-}
-
-// background image
-#saltbg {
-  height: 300px;
-  position: fixed;
-  bottom: 0;
-  right: 0;
 }
 
 /* Customize the label (the radio) */
@@ -149,60 +146,6 @@ body {
 /* Style the indicator (dot/circle) */
 .radio .checkmark:after {
   display: none;
-}
-
-//tool tip
-.radio .tooltiptext {
-  visibility: hidden;
-  width: 180px;
-  max-height: 50px;
-  border: 0.5px dashed $accent;
-  color: #fff;
-  text-align: center;
-  border-radius: 6px;
-  padding: 5px;
-  /* Position the tooltip */
-  position: absolute;
-  z-index: 1;
-}
-
-.radio:hover .tooltiptext {
-  visibility: visible;
-}
-
-// Determines tool tip position in relation to parent
-.tooltipright {
-  @extend .tooltiptext;
-  top: -5px;
-  left: 120%;
-}
-
-.tooltipleft {
-  @extend .tooltiptext;
-  top: -5px;
-  right: 120%;
-}
-
-.radio .tooltipright::after {
-  content: " ";
-  position: absolute;
-  right: 100%; /* At the bottom of the tooltip */
-  top: 50%;
-  margin-left: -5px;
-  border-width: 5px;
-  border-style: dashed;
-  border-color: transparent $accent transparent transparent;
-}
-
-.radio .tooltipleft::after {
-  content: " ";
-  position: absolute;
-  left: 103%; /* At the bottom of the tooltip */
-  top: 50%;
-  margin-left: -5px;
-  border-width: 5px;
-  border-style: dashed;
-  border-color: transparent transparent transparent $accent;
 }
 
 // Adds sweep to bottom button effect
@@ -421,9 +364,32 @@ body {
   }
 }
 
+#about {
+  a {
+    color: white;
+  }
+  padding-bottom: 30px;
+  border-bottom: 2px solid $accent;
+}
+
+footer {
+  margin-top: 30px;
+  margin-bottom: 30px;
+  text-align: center;
+  span {
+    color: $bg;
+  }
+  a {
+    color: $accent;
+  }
+}
 @media only screen and (max-width: 500px) {
+  html {
+    width: 100vw;
+  }
+
   header {
-    margin-bottom: 10px;
+    margin-bottom: 0px;
     border-bottom: 2px solid $accent;
     h1 {
       font-size: 32px;
@@ -441,6 +407,7 @@ body {
 
   body {
     margin: 10px;
+    overflow-x: hidden;
   }
 
   #inputs {
@@ -449,19 +416,14 @@ body {
       font-size: 24px;
       margin: 10px 0px 10px 0px;
     }
-
-    .checkmark {
-      padding: 2px 4px 2px 4px;
-      font-size: 12px;
+    #saltimg {
+      width: 35px;
+      top: 190px;
     }
   }
 
   .output {
     margin: 0px auto 0px auto;
-  }
-
-  #meatWeight {
-    height: 38px;
   }
 
   #feedback {
@@ -481,9 +443,5 @@ body {
 
   #about {
     text-align: left;
-  }
-
-  #saltbg {
-    display: none;
   }
 }
