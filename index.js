@@ -3,33 +3,35 @@ document.addEventListener("DOMContentLoaded", () => {
   lastResult = JSON.parse(localStorage.getItem("lastResult"));
   console.log(lastResult);
 
-  // Closes feedback form
-  document.querySelector(".close").onclick = function () {
-    event.preventDefault();
-    document.getElementById("feedback").style.display = "none";
-    document.getElementById("greybox").style.display = "none";
-  };
-
-  // Feedback form submission
-  document.querySelector(".feedbackButtons").onclick = function () {
-    document.getElementById("feedbackThanks").innerHTML =
-      "Your feedback has been recorded. It will be used to help improve future results. Thanks!";
-    setTimeout(function () {
+  if (lastResult != null) {
+    document.getElementById("feedback").style.display = "block";
+    document.getElementById("greybox").style.display = "block";
+    // Closes feedback form
+    document.querySelector(".close").onclick = function () {
+      event.preventDefault();
       document.getElementById("feedback").style.display = "none";
       document.getElementById("greybox").style.display = "none";
-    }, 2000);
-  };
+    };
+    // Feedback form submission
+    document.querySelector(".feedbackButtons").onclick = function () {
+      document.getElementById("feedbackThanks").innerHTML =
+        "Your feedback has been recorded. It will be used to help improve future results. Thanks!";
+      setTimeout(function () {
+        document.getElementById("feedback").style.display = "none";
+        document.getElementById("greybox").style.display = "none";
+      }, 2000);
+    };
 
-  let meatSelectionText;
-  // To account for "fish" vs "fish meat"
-  if (lastResult["meatSelection"] == "fish") {
-    meatSelectionText = "fish";
-  } else {
-    meatSelectionText = `${lastResult["meatSelection"]} meat`;
-  }
+    let meatSelectionText;
+    // To account for "fish" vs "fish meat"
+    if (lastResult["meatSelection"] == "fish") {
+      meatSelectionText = "fish";
+    } else {
+      meatSelectionText = `${lastResult["meatSelection"]} meat`;
+    }
 
-  // Populates feedback form with saved data
-  if (lastResult) {
+    // Populates feedback form with saved data
+
     document.querySelector("#feedbackLastResult").innerHTML = `${lastResult[
       "saltWeightGrams"
     ].toFixed(2)} grams // ${lastResult["saltWeightTbsp"].toFixed(
