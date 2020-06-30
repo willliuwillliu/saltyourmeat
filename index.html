@@ -45,30 +45,31 @@
                 </ul>
             </nav>
         </header>
-        
+
         <form id="feedback" class="container" name="boneless" data-netlify="true">
             <h3>Last time you were here, we recommended:</h3>
             <p id="feedbackLastResult"></p>
             <ul id="feedbackInputs"></ul>
             <div class="buttons feedbackButtons">
                 <label class="radio"> 
-                    <input type="radio" id="notSaltyEnough" name="NotSaltyEnough" value="Not salty enough">
+                    <input type="radio" id="notSaltyEnough" name="boneless" value="Not salty enough">
                     <span class="checkmark hvr-sweep-to-bottom">Not salty enough</span>
                 </label>
                 <label class="radio"> 
-                    <input type="radio" id="justRight" name="JustRight" value="Just right">
+                    <input type="radio" id="justRight" name="boneless" value="Just right">
                     <span class="checkmark hvr-sweep-to-bottom">Just right</span>
                 </label>
                 <label class="radio"> 
-                    <input type="radio" id="tooSalty" name="TooSalty" value="Too salty">
+                    <input type="radio" id="tooSalty" name="boneless" value="Too salty">
                     <span class="checkmark hvr-sweep-to-bottom">Too salty</span>
                 </label>
                 <label class="radio"> 
-                    <input type="radio" id="tooSalty" name="DNU" value="Did not use">
+                    <input type="radio" id="tooSalty" name="boneless" value="Did not use">
                     <span class="checkmark hvr-sweep-to-bottom">I did not follow the last suggestion</span>
                 </label>
                 <p id="feedbackThanks"></p>
             </div>
+            <button type="submit" form="form1" value="Submit">Submit</button>
             <button class="close">X</button>
         </form>
 
