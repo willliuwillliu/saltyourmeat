@@ -3,21 +3,21 @@ document.addEventListener("DOMContentLoaded", () => {
   lastResult = JSON.parse(localStorage.getItem("lastResult"));
   console.log(lastResult);
 
-  // if (lastResult != null) {
-  //   document.getElementById("feedback").style.display = "block";
-  //   // Closes feedback form
-  //   document.querySelector(".close").onclick = function () {
-  //     event.preventDefault();
-  //     document.getElementById("feedback").style.display = "none";
-  //   };
-  //   // Feedback form submission
-  //   document.querySelector(".feedbackButtons").onclick = function () {
-  //     document.getElementById("feedbackThanks").innerHTML =
-  //       "Your feedback has been recorded. It will be used to help improve future results. Thanks!";
-  //     setTimeout(function () {
-  //       document.getElementById("feedback").style.display = "none";
-  //     }, 2000);
-  //   };
+  if (lastResult != null) {
+    //   document.getElementById("feedback").style.display = "block";
+    //   // Closes feedback form
+    //   document.querySelector(".close").onclick = function () {
+    //     event.preventDefault();
+    //     document.getElementById("feedback").style.display = "none";
+    //   };
+    //   Feedback form submission
+    //   document.querySelector(".feedbackButtons").onclick = function () {
+    //     document.getElementById("feedbackThanks").innerHTML =
+    //       "Your feedback has been recorded. It will be used to help improve future results. Thanks!";
+    //     setTimeout(function () {
+    //       document.getElementById("feedback").style.display = "none";
+    //     }, 2000);
+    //   };
 
     let meatSelectionText;
     // To account for "fish" vs "fish meat"
@@ -27,7 +27,7 @@ document.addEventListener("DOMContentLoaded", () => {
       meatSelectionText = `${lastResult["meatSelection"]} meat`;
     }
 
-    // Populates feedback form with saved data
+    //   // Populates feedback form with saved data
 
     document.querySelector("#feedbackLastResult").innerHTML = `${lastResult[
       "saltWeightGrams"
@@ -39,6 +39,30 @@ document.addEventListener("DOMContentLoaded", () => {
       lastResult["meatWeightSelection"]
     } of ${meatSelectionText}. This was:`;
   }
+
+  const processForm = (form) => {
+    const data = new FormData(form);
+    data.append("form-name", "feedback");
+    fetch("/", {
+      method: "POST",
+      body: data,
+    })
+      .then(() => {
+        form.innerHTML = `<div class="form--success">Thanks for the feedback</div>`;
+      })
+      .catch((error) => {
+        form.innerHTML = `<div class="form--error">Error: ${error}</div>`;
+      });
+  };
+
+  const feedbackForm = document.querySelector("#feedback");
+  if (feedbackForm) {
+    feedbackForm.addEventListener("submit", (e) => {
+      e.preventDefault();
+      processForm(feedbackForm);
+    });
+  }
+
   // Shows an alert if a user forgets to click lbs or kgs
   document.getElementById("inputs").onclick = function () {
     // if lbs or kgs is not selected when a user clicks saltSelection, display the alert

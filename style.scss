@@ -61,18 +61,6 @@ body {
   }
 }
 
-#greybox {
-  display: none;
-  position: fixed;
-  opacity: 0.5;
-  height: 100vh;
-  width: 100vw;
-  background-color: grey;
-  z-index: 1;
-  top: 0;
-  left: 0;
-}
-
 #inputs {
   text-align: center;
   border: 2px double $accent;
@@ -359,6 +347,8 @@ body {
     color: white;
     cursor: pointer;
     outline: inherit;
+  }
+  #feedbackTextArea {
   }
 }
 

@@ -54,18 +54,6 @@ body label {
   font-family: "Source Sans Pro", sans-serif;
 }
 
-#greybox {
-  display: none;
-  position: fixed;
-  opacity: 0.5;
-  height: 100vh;
-  width: 100vw;
-  background-color: grey;
-  z-index: 1;
-  top: 0;
-  left: 0;
-}
-
 #inputs {
   text-align: center;
   border: 2px double #ecebe4;
@@ -346,7 +334,6 @@ body label {
   cursor: pointer;
   outline: inherit;
 }
-
 #about {
   padding-bottom: 30px;
   border-bottom: 2px solid #ecebe4;

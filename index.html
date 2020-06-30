@@ -46,7 +46,7 @@
             </nav>
         </header>
 
-        <form id="feedback" class="container" name="boneless" data-netlify="true">
+        <form id="feedback" class="container" method="POST" name="feedback" data-netlify="true">
             <h3>Last time you were here, we recommended:</h3>
             <p id="feedbackLastResult"></p>
             <ul id="feedbackInputs"></ul>
@@ -69,7 +69,8 @@
                 </label>
                 <p id="feedbackThanks"></p>
             </div>
-            <button type="submit" form="form1" value="Submit">Submit</button>
+            <textarea name="comments" id="feedbackTextArea" placeholder="Any comments?"></textarea><br>
+            <button type="submit" form="feedback" value="Submit">Submit</button>
             <button class="close">X</button>
         </form>
 
