@@ -50,9 +50,10 @@ document.addEventListener("DOMContentLoaded", () => {
       lastResult["meatWeight"]
     } ${lastResult["meatWeightSelection"]} of ${meatSelectionText}. This was:`;
   }
-  document.getElementById("hiddenMetaData").value = lastResult;
-  document.getElementById("hiddenSaltSelection").value =
-    lastResult["saltSelection"];
+  document.getElementById("hiddenMetaData").value = `${lastResult}`;
+  document.getElementById(
+    "hiddenSaltSelection"
+  ).value = `${lastResult["saltSelection"]}`;
   // Process feedback form
   const processForm = (form) => {
     const data = new FormData(form);
