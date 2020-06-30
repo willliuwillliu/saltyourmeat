@@ -1,23 +1,35 @@
 document.addEventListener("DOMContentLoaded", () => {
+  // BEGIN FEEDBACK FORM CODE
   // Gets the data from user's previous session
   lastResult = JSON.parse(localStorage.getItem("lastResult"));
-  console.log(lastResult);
+
+  let meatSelection = lastResult["meatSelection"];
 
   if (lastResult != null) {
-    //   document.getElementById("feedback").style.display = "block";
-    //   // Closes feedback form
-    //   document.querySelector(".close").onclick = function () {
-    //     event.preventDefault();
-    //     document.getElementById("feedback").style.display = "none";
-    //   };
-    //   Feedback form submission
-    //   document.querySelector(".feedbackButtons").onclick = function () {
-    //     document.getElementById("feedbackThanks").innerHTML =
-    //       "Your feedback has been recorded. It will be used to help improve future results. Thanks!";
-    //     setTimeout(function () {
-    //       document.getElementById("feedback").style.display = "none";
-    //     }, 2000);
-    //   };
+    if (meatSelection == "bonein") {
+      document.getElementById("feedback-bonein").style.display = "block";
+    }
+    if (meatSelection == "boneless") {
+      document.getElementById("feedback-boneless").style.display = "block";
+    }
+    if (meatSelection == "fish") {
+      document.getElementById("feedback-fish").style.display = "block";
+    }
+    if (meatSelection == "ground") {
+      document.getElementById("feedback-ground").style.display = "block";
+    }
+
+    // Closes feedback form
+    var closeButtons = document.getElementsByClassName("close");
+    var myFunction = function () {
+      event.preventDefault();
+      document.querySelector(`#feedback-${meatSelection}`).style.display =
+        "none";
+    };
+    for (var i = 0; i < closeButtons.length; i++) {
+      closeButtons[i].addEventListener("click", myFunction, false);
+    }
+    // End closes feedback form
 
     let meatSelectionText;
     // To account for "fish" vs "fish meat"
@@ -27,22 +39,22 @@ document.addEventListener("DOMContentLoaded", () => {
       meatSelectionText = `${lastResult["meatSelection"]} meat`;
     }
 
-    //   // Populates feedback form with saved data
-
-    document.querySelector("#feedbackLastResult").innerHTML = `${lastResult[
-      "saltWeightGrams"
-    ].toFixed(2)} grams // ${lastResult["saltWeightTbsp"].toFixed(
+    // Populates feedback form with saved data
+    document.getElementById(
+      `feedbackLastResult-${meatSelection}`
+    ).innerHTML = `${lastResult["saltWeightGrams"].toFixed(
       2
-    )} tbsp // ${lastResult["saltWeightTsp"].toFixed(2)} tsp of ${
-      lastResult["saltSelection"]
-    } for ${lastResult["meatWeight"]} ${
-      lastResult["meatWeightSelection"]
-    } of ${meatSelectionText}. This was:`;
+    )} grams // ${lastResult["saltWeightTbsp"].toFixed(2)} tbsp // ${lastResult[
+      "saltWeightTsp"
+    ].toFixed(2)} tsp of ${lastResult["saltSelection"]} for ${
+      lastResult["meatWeight"]
+    } ${lastResult["meatWeightSelection"]} of ${meatSelectionText}. This was:`;
   }
 
+  // Process feedback form
   const processForm = (form) => {
     const data = new FormData(form);
-    data.append("form-name", "feedback");
+    data.append("form-name", `feedback-${meatSelection}`);
     fetch("/", {
       method: "POST",
       body: data,
@@ -55,13 +67,16 @@ document.addEventListener("DOMContentLoaded", () => {
       });
   };
 
-  const feedbackForm = document.querySelector("#feedback");
+  // Prevents redirect
+  const feedbackForm = document.querySelector(`#feedback-${meatSelection}`);
   if (feedbackForm) {
     feedbackForm.addEventListener("submit", (e) => {
       e.preventDefault();
       processForm(feedbackForm);
     });
   }
+
+  // END FEEDBACK FORM
 
   // Shows an alert if a user forgets to click lbs or kgs
   document.getElementById("inputs").onclick = function () {

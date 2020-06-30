@@ -306,7 +306,7 @@ body label {
   border-bottom: 1.2px dashed;
 }
 
-#feedback {
+.feedback {
   position: relative;
   border: 2px double #ecebe4;
   padding: 10px;
@@ -315,14 +315,14 @@ body label {
   box-sizing: border-box;
   text-align: center;
 }
-#feedback h3 {
+.feedback h3 {
   font-size: 24px;
 }
-#feedback p {
+.feedback p {
   font-size: 16px;
   color: #ecebe4;
 }
-#feedback .close {
+.feedback .close {
   position: absolute;
   top: 5px;
   right: 5px;
@@ -334,6 +334,14 @@ body label {
   cursor: pointer;
   outline: inherit;
 }
+
+#feedback-boneless,
+#feedback-bonein,
+#feedback-ground,
+#feedback-fish {
+  display: none;
+}
+
 #about {
   padding-bottom: 30px;
   border-bottom: 2px solid #ecebe4;
@@ -391,16 +399,16 @@ footer a {
     margin: 0px auto 0px auto;
   }
 
-  #feedback h3 {
+  .feedback h3 {
     font-size: 24px;
   }
-  #feedback p {
+  .feedback p {
     font-size: 14px;
   }
-  #feedback .feedbackButtons {
+  .feedback .feedbackButtons {
     margin-bottom: 0px;
   }
-  #feedback .close {
+  .feedback .close {
     margin-top: 0px;
   }
 

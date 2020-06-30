@@ -46,9 +46,17 @@
             </nav>
         </header>
 
-        <form id="feedback" class="container" method="POST" name="feedback" data-netlify="true">
+        <!-- START OF FEEDBACK FORMS. There is a different one for each type of meat, only one is displayed -->
+
+        <form id="feedback-boneless" class="container feedback" method="POST" name="feedback-boneless" data-netlify="true" netlify-honeypot="bot-field">
+            <div hidden aria-hidden="true">
+                <label>
+                  Don’t fill this out if you're human: 
+                  <input name="bot-field" />
+                </label>
+            </div>
             <h3>Last time you were here, we recommended:</h3>
-            <p id="feedbackLastResult"></p>
+            <p id="feedbackLastResult-boneless"></p>
             <ul id="feedbackInputs"></ul>
             <div class="buttons feedbackButtons">
                 <label class="radio"> 
@@ -70,9 +78,113 @@
                 <p id="feedbackThanks"></p>
             </div>
             <textarea name="comments" id="feedbackTextArea" placeholder="Any comments?"></textarea><br>
-            <button type="submit" form="feedback" value="Submit">Submit</button>
+            <button type="submit" form="feedback-boneless" value="Submit">Submit</button>
             <button class="close">X</button>
         </form>
+
+        <form id="feedback-bonein" class="container feedback" method="POST" name="feedback-bonein" data-netlify="true" netlify-honeypot="bot-field">
+            <div hidden aria-hidden="true">
+                <label>
+                  Don’t fill this out if you're human: 
+                  <input name="bot-field" />
+                </label>
+            </div>
+            <h3>Last time you were here, we recommended:</h3>
+            <p id="feedbackLastResult-bonein"></p>
+            <ul id="feedbackInputs"></ul>
+            <div class="buttons feedbackButtons">
+                <label class="radio"> 
+                    <input type="radio" id="notSaltyEnough" name="bonein" value="Not salty enough">
+                    <span class="checkmark hvr-sweep-to-bottom">Not salty enough</span>
+                </label>
+                <label class="radio"> 
+                    <input type="radio" id="justRight" name="bonein" value="Just right">
+                    <span class="checkmark hvr-sweep-to-bottom">Just right</span>
+                </label>
+                <label class="radio"> 
+                    <input type="radio" id="tooSalty" name="bonein" value="Too salty">
+                    <span class="checkmark hvr-sweep-to-bottom">Too salty</span>
+                </label>
+                <label class="radio"> 
+                    <input type="radio" id="tooSalty" name="bonein" value="Did not use">
+                    <span class="checkmark hvr-sweep-to-bottom">I did not follow the last suggestion</span>
+                </label>
+                <p id="feedbackThanks"></p>
+            </div>
+            <textarea name="comments" id="feedbackTextArea" placeholder="Any comments?"></textarea><br>
+            <button type="submit" form="feedback-bonein" value="Submit">Submit</button>
+            <button class="close">X</button>
+        </form>
+
+        <form id="feedback-ground" class="container feedback" method="POST" name="feedback-ground" data-netlify="true" netlify-honeypot="bot-field">
+            <div hidden aria-hidden="true">
+                <label>
+                  Don’t fill this out if you're human: 
+                  <input name="bot-field" />
+                </label>
+            </div>
+            <h3>Last time you were here, we recommended:</h3>
+            <p id="feedbackLastResult-ground"></p>
+            <ul id="feedbackInputs"></ul>
+            <div class="buttons feedbackButtons">
+                <label class="radio"> 
+                    <input type="radio" id="notSaltyEnough" name="ground" value="Not salty enough">
+                    <span class="checkmark hvr-sweep-to-bottom">Not salty enough</span>
+                </label>
+                <label class="radio"> 
+                    <input type="radio" id="justRight" name="ground" value="Just right">
+                    <span class="checkmark hvr-sweep-to-bottom">Just right</span>
+                </label>
+                <label class="radio"> 
+                    <input type="radio" id="tooSalty" name="ground" value="Too salty">
+                    <span class="checkmark hvr-sweep-to-bottom">Too salty</span>
+                </label>
+                <label class="radio"> 
+                    <input type="radio" id="tooSalty" name="ground" value="Did not use">
+                    <span class="checkmark hvr-sweep-to-bottom">I did not follow the last suggestion</span>
+                </label>
+                <p id="feedbackThanks"></p>
+            </div>
+            <textarea name="comments" id="feedbackTextArea" placeholder="Any comments?"></textarea><br>
+            <button type="submit" form="feedback-ground" value="Submit">Submit</button>
+            <button class="close">X</button>
+        </form>
+
+        <form id="feedback-fish" class="container feedback" method="POST" name="feedback-fish" data-netlify="true" netlify-honeypot="bot-field">
+            <div hidden aria-hidden="true">
+                <label>
+                  Don’t fill this out if you're human: 
+                  <input name="bot-field" />
+                </label>
+            </div>
+            <h3>Last time you were here, we recommended:</h3>
+            <p id="feedbackLastResult-fish"></p>
+            <ul id="feedbackInputs"></ul>
+            <div class="buttons feedbackButtons">
+                <label class="radio"> 
+                    <input type="radio" id="notSaltyEnough" name="fish" value="Not salty enough">
+                    <span class="checkmark hvr-sweep-to-bottom">Not salty enough</span>
+                </label>
+                <label class="radio"> 
+                    <input type="radio" id="justRight" name="fish" value="Just right">
+                    <span class="checkmark hvr-sweep-to-bottom">Just right</span>
+                </label>
+                <label class="radio"> 
+                    <input type="radio" id="tooSalty" name="fish" value="Too salty">
+                    <span class="checkmark hvr-sweep-to-bottom">Too salty</span>
+                </label>
+                <label class="radio"> 
+                    <input type="radio" id="tooSalty" name="fish" value="Did not use">
+                    <span class="checkmark hvr-sweep-to-bottom">I did not follow the last suggestion</span>
+                </label>
+                <p id="feedbackThanks"></p>
+            </div>
+            <textarea name="comments" id="feedbackTextArea" placeholder="Any comments?"></textarea><br>
+            <button type="submit" form="feedback-fish" value="Submit">Submit</button>
+            <button class="close">X</button>
+        </form>
+
+        <!-- END FEEDBACK FORMS -->
 
         <form id="inputs" class="container" autocomplete="off">
             <img id="saltimg" src="salt.svg">
