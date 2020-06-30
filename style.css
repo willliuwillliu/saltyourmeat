@@ -335,7 +335,8 @@ body label {
   outline: inherit;
 }
 
-#hiddenMetaData {
+#hiddenMetaData,
+#hiddenSaltSelection {
   display: none;
 }
 
