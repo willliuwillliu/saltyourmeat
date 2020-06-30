@@ -112,7 +112,7 @@ document.addEventListener("DOMContentLoaded", () => {
     // Find salt weight in grams, depending on meat type
     bonelessSaltByWeight = 0.0125;
     boneinSaltByWeight = 0.015;
-    fishSaltByWeight = 0.009;
+    fishSaltByWeight = 0.0055;
     groundSaltByWeight = 0.01;
     if (meatSelection === "boneless") {
       saltWeightGrams = meatWeightGrams * bonelessSaltByWeight;
