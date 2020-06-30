@@ -76,7 +76,6 @@ body {
 #inputs {
   text-align: center;
   border: 2px double $accent;
-  max-width: 560px;
   padding: 20px;
   box-sizing: border-box;
   position: relative;
@@ -89,7 +88,6 @@ body {
 
 .container {
   margin: auto;
-
   max-width: 560px;
 }
 
@@ -335,32 +333,32 @@ body {
 }
 
 #feedback {
-  display: none;
-  z-index: 2;
-  padding: 30px;
-  background-color: #284564;
+  position: relative;
   border: 2px double $accent;
-  position: fixed;
-  width: 50vw;
-  top: 50%;
-  left: 50%;
+  padding: 10px;
+  background-color: #284564;
+  margin: 30px auto 30px auto;
+  box-sizing: border-box;
   text-align: center;
-  -webkit-transform: translate(-50%, -50%);
-  -moz-transform: translate(-50%, -50%);
-  -ms-transform: translate(-50%, -50%);
-  -o-transform: translate(-50%, -50%);
-  transform: translate(-50%, -50%);
-  margin: auto;
-  h3,
-  p {
-    color: $accent;
+  h3 {
+    font-size: 24px;
   }
 
   p {
-    font-size: 24px;
+    font-size: 16px;
+    color: $accent;
   }
   .close {
-    margin-top: 20px;
+    position: absolute;
+    top: 5px;
+    right: 5px;
+    background: none;
+    color: inherit;
+    border: none;
+    padding: 0;
+    color: white;
+    cursor: pointer;
+    outline: inherit;
   }
 }
 

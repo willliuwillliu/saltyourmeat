@@ -5,12 +5,10 @@ document.addEventListener("DOMContentLoaded", () => {
 
   if (lastResult != null) {
     document.getElementById("feedback").style.display = "block";
-    document.getElementById("greybox").style.display = "block";
     // Closes feedback form
     document.querySelector(".close").onclick = function () {
       event.preventDefault();
       document.getElementById("feedback").style.display = "none";
-      document.getElementById("greybox").style.display = "none";
     };
     // Feedback form submission
     document.querySelector(".feedbackButtons").onclick = function () {
@@ -18,7 +16,6 @@ document.addEventListener("DOMContentLoaded", () => {
         "Your feedback has been recorded. It will be used to help improve future results. Thanks!";
       setTimeout(function () {
         document.getElementById("feedback").style.display = "none";
-        document.getElementById("greybox").style.display = "none";
       }, 2000);
     };
 

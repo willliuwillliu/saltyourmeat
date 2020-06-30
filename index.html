@@ -45,6 +45,33 @@
                 </ul>
             </nav>
         </header>
+        
+        <form id="feedback" class="container" name="boneless" data-netlify="true">
+            <h3>Last time you were here, we recommended:</h3>
+            <p id="feedbackLastResult"></p>
+            <ul id="feedbackInputs"></ul>
+            <div class="buttons feedbackButtons">
+                <label class="radio"> 
+                    <input type="radio" id="notSaltyEnough" name="NotSaltyEnough" value="Not salty enough">
+                    <span class="checkmark hvr-sweep-to-bottom">Not salty enough</span>
+                </label>
+                <label class="radio"> 
+                    <input type="radio" id="justRight" name="JustRight" value="Just right">
+                    <span class="checkmark hvr-sweep-to-bottom">Just right</span>
+                </label>
+                <label class="radio"> 
+                    <input type="radio" id="tooSalty" name="TooSalty" value="Too salty">
+                    <span class="checkmark hvr-sweep-to-bottom">Too salty</span>
+                </label>
+                <label class="radio"> 
+                    <input type="radio" id="tooSalty" name="DNU" value="Did not use">
+                    <span class="checkmark hvr-sweep-to-bottom">I did not follow the last suggestion</span>
+                </label>
+                <p id="feedbackThanks"></p>
+            </div>
+            <button class="close">X</button>
+        </form>
+
         <form id="inputs" class="container" autocomplete="off">
             <img id="saltimg" src="salt.svg">
             <h2>What kind of meat?</h2>
@@ -146,32 +173,6 @@
         </div>
             <!-- the Layer when feedback pops up  -->
         <div id="greybox"></div>
-
-        <div id="feedback">
-            <h3>Last time you were here, we recommended:</h3>
-            <p id="feedbackLastResult"></p>
-            <ul id="feedbackInputs"></ul>
-            <div class="buttons feedbackButtons">
-                <label class="radio"> 
-                    <input type="radio" id="notSaltyEnough" name="feedback" value="Not salty enough">
-                    <span class="checkmark hvr-sweep-to-bottom">Not salty enough</span>
-                </label>
-                <label class="radio"> 
-                    <input type="radio" id="justRight" name="feedback" value="Just right">
-                    <span class="checkmark hvr-sweep-to-bottom">Just right</span>
-                </label>
-                <label class="radio"> 
-                    <input type="radio" id="tooSalty" name="feedback" value="Too salty">
-                    <span class="checkmark hvr-sweep-to-bottom">Too salty</span>
-                </label>
-                <label class="radio"> 
-                    <input type="radio" id="tooSalty" name="feedback" value="Too salty">
-                    <span class="checkmark hvr-sweep-to-bottom">I did not follow the last suggestion</span>
-                </label>
-                <p id="feedbackThanks"></p>
-            </div>
-            <button class="close">Close</button>
-        </div>
 
         <div id="about" class="container">
             <h2>About</h2>

@@ -69,7 +69,6 @@ body label {
 #inputs {
   text-align: center;
   border: 2px double #ecebe4;
-  max-width: 560px;
   padding: 20px;
   box-sizing: border-box;
   position: relative;
@@ -320,32 +319,32 @@ body label {
 }
 
 #feedback {
-  display: none;
-  z-index: 2;
-  padding: 30px;
-  background-color: #284564;
+  position: relative;
   border: 2px double #ecebe4;
-  position: fixed;
-  width: 50vw;
-  top: 50%;
-  left: 50%;
+  padding: 10px;
+  background-color: #284564;
+  margin: 30px auto 30px auto;
+  box-sizing: border-box;
   text-align: center;
-  -webkit-transform: translate(-50%, -50%);
-  -moz-transform: translate(-50%, -50%);
-  -ms-transform: translate(-50%, -50%);
-  -o-transform: translate(-50%, -50%);
-  transform: translate(-50%, -50%);
-  margin: auto;
 }
-#feedback h3,
-#feedback p {
-  color: #ecebe4;
-}
-#feedback p {
+#feedback h3 {
   font-size: 24px;
 }
+#feedback p {
+  font-size: 16px;
+  color: #ecebe4;
+}
 #feedback .close {
-  margin-top: 20px;
+  position: absolute;
+  top: 5px;
+  right: 5px;
+  background: none;
+  color: inherit;
+  border: none;
+  padding: 0;
+  color: white;
+  cursor: pointer;
+  outline: inherit;
 }
 
 #about {
