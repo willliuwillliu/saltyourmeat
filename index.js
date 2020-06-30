@@ -189,7 +189,7 @@ document.addEventListener("DOMContentLoaded", () => {
       document.querySelector("#brineMax").innerHTML = `10 minutes`;
     }
     document.querySelector("#outputNote").innerHTML =
-      "<i>Please note that these are suggestions and everyone's palettes are different. Try these suggestions and then adjust to your own taste!</i>";
+      "<i>Please note that <b>this calculator spits out general guidelines<b>. Everyone's preferences for salt intake are different. On top of that, you may want to use a little more salt for a brisket than you would a chicken breast. If you're the type of person who already knows their preferred salt/weight ratio, you can use this calculator to help you estimate the amount of salt you would use if you were working with a different type of salt or cut of meat. If you have no idea how much salt you should be using, use these suggestions as a starting point and adjust from there! </i>";
 
     let result = {
       meatSelection: meatSelection,
