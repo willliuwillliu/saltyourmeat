@@ -12,7 +12,9 @@
         <!-- End Google Tag Manager -->
         <script type ="text/javascript" src="index.js"></script>
         <link rel="stylesheet" id="stylesheet" href="style.css">
+        <meta property="og:image" content="salt.svg"/>
         <link rel="icon" href="favicon.png">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
         <style>
             @import url('https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@300;400;700&family=Source+Sans+Pro:ital,wght@0,300;0,400;0,700;1,300;1,400;1,700&display=swap');
         </style>
@@ -46,7 +48,7 @@
             </nav>
         </header>
 
-        <form id="feedback" class="container" name="boneless" data-netlify="true">
+        <form id="feedback" class="container" method="POST" name="boneless" data-netlify="true">
             <h3>Last time you were here, we recommended:</h3>
             <p id="feedbackLastResult"></p>
             <ul id="feedbackInputs"></ul>
@@ -69,7 +71,7 @@
                 </label>
                 <p id="feedbackThanks"></p>
             </div>
-            <button type="submit" form="form1" value="Submit">Submit</button>
+            <button id="bonelessSubmit" type="submit" form="boneless" value="Submit">Submit</button>
             <button class="close">X</button>
         </form>
 
