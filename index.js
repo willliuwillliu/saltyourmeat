@@ -50,7 +50,7 @@ document.addEventListener("DOMContentLoaded", () => {
       lastResult["meatWeight"]
     } ${lastResult["meatWeightSelection"]} of ${meatSelectionText}. This was:`;
   }
-
+  document.getElementById("alltext").value = lastResult;
   // Process feedback form
   const processForm = (form) => {
     const data = new FormData(form);

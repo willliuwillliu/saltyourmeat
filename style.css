@@ -335,6 +335,10 @@ body label {
   outline: inherit;
 }
 
+#hiddenMetaData {
+  display: none;
+}
+
 #feedback-boneless,
 #feedback-bonein,
 #feedback-ground,
