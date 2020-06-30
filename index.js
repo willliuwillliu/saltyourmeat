@@ -3,21 +3,21 @@ document.addEventListener("DOMContentLoaded", () => {
   lastResult = JSON.parse(localStorage.getItem("lastResult"));
   console.log(lastResult);
 
-  if (lastResult != null) {
-    document.getElementById("feedback").style.display = "block";
-    // Closes feedback form
-    document.querySelector(".close").onclick = function () {
-      event.preventDefault();
-      document.getElementById("feedback").style.display = "none";
-    };
-    // Feedback form submission
-    document.querySelector(".feedbackButtons").onclick = function () {
-      document.getElementById("feedbackThanks").innerHTML =
-        "Your feedback has been recorded. It will be used to help improve future results. Thanks!";
-      setTimeout(function () {
-        document.getElementById("feedback").style.display = "none";
-      }, 2000);
-    };
+  // if (lastResult != null) {
+  //   document.getElementById("feedback").style.display = "block";
+  //   // Closes feedback form
+  //   document.querySelector(".close").onclick = function () {
+  //     event.preventDefault();
+  //     document.getElementById("feedback").style.display = "none";
+  //   };
+  //   // Feedback form submission
+  //   document.querySelector(".feedbackButtons").onclick = function () {
+  //     document.getElementById("feedbackThanks").innerHTML =
+  //       "Your feedback has been recorded. It will be used to help improve future results. Thanks!";
+  //     setTimeout(function () {
+  //       document.getElementById("feedback").style.display = "none";
+  //     }, 2000);
+  //   };
 
     let meatSelectionText;
     // To account for "fish" vs "fish meat"
