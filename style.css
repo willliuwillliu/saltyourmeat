@@ -6,9 +6,19 @@ h3 {
   font-weight: 300;
 }
 
+h2 {
+  margin-top: 15px;
+  margin-bottom: 8px;
+}
+
 h3 {
   font-size: 32px;
   margin: 15px 0px 15px 0px;
+}
+
+ul {
+  font-family: "Source Sans Pro", sans-serif;
+  color: #ecebe4;
 }
 
 header {
@@ -389,6 +399,9 @@ footer a {
   body {
     margin: 10px;
     overflow-x: hidden;
+  }
+  body p {
+    font-size: 18px;
   }
 
   #inputs {

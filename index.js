@@ -66,10 +66,10 @@ document.addEventListener("DOMContentLoaded", () => {
         body: data,
       })
         .then(() => {
-          form.innerHTML = `<div class="form--success">Thanks for the feedback</div>`;
+          form.innerHTML = `<p class="form--success">Thanks for the feedback! Your response will be used to help adjust these guidelines.</p>`;
         })
         .catch((error) => {
-          form.innerHTML = `<div class="form--error">Error: ${error}</div>`;
+          form.innerHTML = `<p class="form--error">Error: ${error}</p>`;
         });
     };
 
@@ -233,7 +233,7 @@ document.addEventListener("DOMContentLoaded", () => {
       document.querySelector("#brineMax").innerHTML = `10 minutes`;
     }
     document.querySelector("#outputNote").innerHTML =
-      "<i>Please note that <b>this calculator spits out general guidelines</b>. Everyone's preferences for salt intake are different. On top of that, you may want to use a little more salt for a brisket than you would a chicken breast. If you're the type of person who already knows their preferred salt/weight ratio, you can use this calculator to help you estimate the amount of salt you would use if you were working with a different type of salt or cut of meat. If you have no idea how much salt you should be using, use these suggestions as a starting point and adjust from there! </i>";
+      "<i><p>Please note that <b>this calculator spits out general guidelines</b>. Everyone's preferences for salt intake are different, and the amount of salt you're using will likely vary depending on the dish you are using. This suggestion is meant to be a starting point. </p><p>Additionally, this suggestion will be saved. The next time you visit this site, we'll pull it up and you can tell us how it worked out for you if you'd like. Your feedback will help improve calculations in the future!</p></i>";
 
     let result = {
       meatSelection: meatSelection,
