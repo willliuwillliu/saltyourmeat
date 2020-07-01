@@ -2,9 +2,10 @@ document.addEventListener("DOMContentLoaded", () => {
   // BEGIN FEEDBACK FORM CODE
   // Gets the data from user's previous session
   lastResult = JSON.parse(localStorage.getItem("lastResult"));
+  console.log(lastResult);
 
   if (lastResult != null) {
-    console.document.getElementById("feedback").style.display = "block";
+    document.getElementById("feedback").style.display = "block";
     // Closes feedback form
 
     document.getElementById("closeFeedback").onclick = function () {
@@ -30,57 +31,57 @@ document.addEventListener("DOMContentLoaded", () => {
     } for ${lastResult["meatWeight"]} ${
       lastResult["meatWeightSelection"]
     } of ${meatSelectionText}. This was:`;
-  }
-  // Fills hidden metadata inputs
-  document.getElementById(
-    "hidden-meatSelection"
-  ).value = `${lastResult["meatSelection"]}`;
-  document.getElementById(
-    "hidden-meatWeight"
-  ).value = `${lastResult["meatWeight"]}`;
-  document.getElementById(
-    "hidden-meatWeightSelection"
-  ).value = `${lastResult["meatWeightSelection"]}`;
-  document.getElementById(
-    "hidden-saltSelection"
-  ).value = `${lastResult["saltSelection"]}`;
-  document.getElementById(
-    "hidden-saltPreference"
-  ).value = `${lastResult["saltPreference"]}`;
-  document.getElementById(
-    "hidden-saltWeightGrams"
-  ).value = `${lastResult["saltWeightGrams"]}`;
-  document.getElementById(
-    "hidden-saltWeightTbsp"
-  ).value = `${lastResult["saltWeightTbsp"]}`;
-  document.getElementById(
-    "hidden-saltWeightTsp"
-  ).value = `${lastResult["saltWeightTsp"]}`;
+    // Fills hidden metadata inputs
+    document.getElementById(
+      "hidden-meatSelection"
+    ).value = `${lastResult["meatSelection"]}`;
+    document.getElementById(
+      "hidden-meatWeight"
+    ).value = `${lastResult["meatWeight"]}`;
+    document.getElementById(
+      "hidden-meatWeightSelection"
+    ).value = `${lastResult["meatWeightSelection"]}`;
+    document.getElementById(
+      "hidden-saltSelection"
+    ).value = `${lastResult["saltSelection"]}`;
+    document.getElementById(
+      "hidden-saltPreference"
+    ).value = `${lastResult["saltPreference"]}`;
+    document.getElementById(
+      "hidden-saltWeightGrams"
+    ).value = `${lastResult["saltWeightGrams"]}`;
+    document.getElementById(
+      "hidden-saltWeightTbsp"
+    ).value = `${lastResult["saltWeightTbsp"]}`;
+    document.getElementById(
+      "hidden-saltWeightTsp"
+    ).value = `${lastResult["saltWeightTsp"]}`;
 
-  // Process feedback form
-  const processForm = (form) => {
-    const data = new FormData(form);
-    data.append("form-name", "feedback");
-    fetch("/", {
-      method: "POST",
-      body: data,
-    })
-      .then(() => {
-        form.innerHTML = `<div class="form--success">Thanks for the feedback</div>`;
+    // Process feedback form
+    const processForm = (form) => {
+      const data = new FormData(form);
+      data.append("form-name", "feedback");
+      fetch("/", {
+        method: "POST",
+        body: data,
       })
-      .catch((error) => {
-        form.innerHTML = `<div class="form--error">Error: ${error}</div>`;
-      });
-  };
+        .then(() => {
+          form.innerHTML = `<div class="form--success">Thanks for the feedback</div>`;
+        })
+        .catch((error) => {
+          form.innerHTML = `<div class="form--error">Error: ${error}</div>`;
+        });
+    };
 
-  // Prevents redirect
-  const feedbackForm = document.querySelector("#feedback");
-  if (feedbackForm) {
-    console.log("hi");
-    feedbackForm.addEventListener("submit", (e) => {
-      e.preventDefault();
-      processForm(feedbackForm);
-    });
+    // Prevents redirect
+    const feedbackForm = document.querySelector("#feedback");
+    if (feedbackForm) {
+      console.log("hi");
+      feedbackForm.addEventListener("submit", (e) => {
+        e.preventDefault();
+        processForm(feedbackForm);
+      });
+    }
   }
 
   // END FEEDBACK FORM~
