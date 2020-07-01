@@ -322,7 +322,7 @@ body label {
   font-size: 16px;
   color: #ecebe4;
 }
-.feedback .close {
+.feedback #closeFeedback {
   position: absolute;
   top: 5px;
   right: 5px;
@@ -335,15 +335,14 @@ body label {
   outline: inherit;
 }
 
-#hiddenMetaData,
-#hiddenSaltSelection {
-  display: none;
-}
-
-#feedback-boneless,
-#feedback-bonein,
-#feedback-ground,
-#feedback-fish {
+#hidden-meatSelection,
+#hidden-meatWeight,
+#hidden-meatWeightSelection,
+#hidden-saltSelection,
+#hidden-saltPreference,
+#hidden-saltWeightGrams,
+#hidden-saltWeightTbsp,
+#hidden-saltWeightTsp {
   display: none;
 }
 
@@ -413,7 +412,7 @@ footer a {
   .feedback .feedbackButtons {
     margin-bottom: 0px;
   }
-  .feedback .close {
+  .feedback #closeFeedback {
     margin-top: 0px;
   }
 

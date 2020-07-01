@@ -6,33 +6,16 @@ document.addEventListener("DOMContentLoaded", () => {
   let meatSelection = lastResult["meatSelection"];
 
   if (lastResult != null) {
-    if (meatSelection == "bonein") {
-      document.getElementById("feedback-bonein").style.display = "block";
-    }
-    if (meatSelection == "boneless") {
-      document.getElementById("feedback-boneless").style.display = "block";
-    }
-    if (meatSelection == "fish") {
-      document.getElementById("feedback-fish").style.display = "block";
-    }
-    if (meatSelection == "ground") {
-      document.getElementById("feedback-ground").style.display = "block";
-    }
-
+    document.getElementById("feedback").style.display = "block";
     // Closes feedback form
-    var closeButtons = document.getElementsByClassName("close");
-    var myFunction = function () {
-      event.preventDefault();
-      document.querySelector(`#feedback-${meatSelection}`).style.display =
-        "none";
-    };
-    for (var i = 0; i < closeButtons.length; i++) {
-      closeButtons[i].addEventListener("click", myFunction, false);
-    }
-    // End closes feedback form
 
-    let meatSelectionText;
+    document.getElementById("closeFeedback").onclick = function () {
+      event.preventDefault();
+      document.querySelector("#feedback").style.display = "none";
+    };
+
     // To account for "fish" vs "fish meat"
+    let meatSelectionText;
     if (lastResult["meatSelection"] == "fish") {
       meatSelectionText = "fish";
     } else {
@@ -40,24 +23,45 @@ document.addEventListener("DOMContentLoaded", () => {
     }
 
     // Populates feedback form with saved data
-    document.getElementById(
-      `feedbackLastResult-${meatSelection}`
-    ).innerHTML = `${lastResult["saltWeightGrams"].toFixed(
+    document.getElementById("feedbackLastResult").innerHTML = `${lastResult[
+      "saltWeightGrams"
+    ].toFixed(2)} grams // ${lastResult["saltWeightTbsp"].toFixed(
       2
-    )} grams // ${lastResult["saltWeightTbsp"].toFixed(2)} tbsp // ${lastResult[
-      "saltWeightTsp"
-    ].toFixed(2)} tsp of ${lastResult["saltSelection"]} for ${
-      lastResult["meatWeight"]
-    } ${lastResult["meatWeightSelection"]} of ${meatSelectionText}. This was:`;
+    )} tbsp // ${lastResult["saltWeightTsp"].toFixed(2)} tsp of ${
+      lastResult["saltSelection"]
+    } for ${lastResult["meatWeight"]} ${
+      lastResult["meatWeightSelection"]
+    } of ${meatSelectionText}. This was:`;
   }
-  document.getElementById("hiddenMetaData").value = `${lastResult}`;
   document.getElementById(
-    "hiddenSaltSelection"
+    "hidden-meatSelection"
+  ).value = `${lastResult["meatSelection"]}`;
+  document.getElementById(
+    "hidden-meatWeight"
+  ).value = `${lastResult["meatWeight"]}`;
+  document.getElementById(
+    "hidden-meatWeightSelection"
+  ).value = `${lastResult["meatWeightSelection"]}`;
+  document.getElementById(
+    "hidden-saltSelection"
   ).value = `${lastResult["saltSelection"]}`;
+  document.getElementById(
+    "hidden-saltPreference"
+  ).value = `${lastResult["saltPreference"]}`;
+  document.getElementById(
+    "hidden-saltWeightGrams"
+  ).value = `${lastResult["saltWeightGrams"]}`;
+  document.getElementById(
+    "hidden-saltWeightTbsp"
+  ).value = `${lastResult["saltWeightTbsp"]}`;
+  document.getElementById(
+    "hidden-saltWeightTsp"
+  ).value = `${lastResult["saltWeightTsp"]}`;
+
   // Process feedback form
   const processForm = (form) => {
     const data = new FormData(form);
-    data.append("form-name", `feedback-${meatSelection}`);
+    data.append("form-name", "feedback");
     fetch("/", {
       method: "POST",
       body: data,
@@ -71,8 +75,9 @@ document.addEventListener("DOMContentLoaded", () => {
   };
 
   // Prevents redirect
-  const feedbackForm = document.querySelector(`#feedback-${meatSelection}`);
+  const feedbackForm = document.querySelector("#feedback");
   if (feedbackForm) {
+    console.log("hi");
     feedbackForm.addEventListener("submit", (e) => {
       e.preventDefault();
       processForm(feedbackForm);
