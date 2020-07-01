@@ -381,10 +381,6 @@ footer a {
 }
 
 @media only screen and (max-width: 500px) {
-  html {
-    width: 100vw;
-  }
-
   header {
     margin-bottom: 0px;
     border-bottom: 2px solid #ecebe4;
@@ -396,9 +392,12 @@ footer a {
     font-size: 14px;
   }
 
+  .container {
+    max-width: 100%;
+  }
+
   body {
     margin: 10px;
-    overflow-x: hidden;
   }
   body p {
     font-size: 18px;
