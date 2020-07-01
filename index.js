@@ -4,7 +4,7 @@ document.addEventListener("DOMContentLoaded", () => {
   lastResult = JSON.parse(localStorage.getItem("lastResult"));
 
   if (lastResult != null) {
-    document.getElementById("feedback").style.display = "block";
+    console.document.getElementById("feedback").style.display = "block";
     // Closes feedback form
 
     document.getElementById("closeFeedback").onclick = function () {
