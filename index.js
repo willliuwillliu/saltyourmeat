@@ -3,8 +3,6 @@ document.addEventListener("DOMContentLoaded", () => {
   // Gets the data from user's previous session
   lastResult = JSON.parse(localStorage.getItem("lastResult"));
 
-  let meatSelection = lastResult["meatSelection"];
-
   if (lastResult != null) {
     document.getElementById("feedback").style.display = "block";
     // Closes feedback form
@@ -33,6 +31,7 @@ document.addEventListener("DOMContentLoaded", () => {
       lastResult["meatWeightSelection"]
     } of ${meatSelectionText}. This was:`;
   }
+  // Fills hidden metadata inputs
   document.getElementById(
     "hidden-meatSelection"
   ).value = `${lastResult["meatSelection"]}`;
@@ -84,7 +83,7 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   }
 
-  // END FEEDBACK FORM
+  // END FEEDBACK FORM~
 
   // Shows an alert if a user forgets to click lbs or kgs
   document.getElementById("inputs").onclick = function () {
