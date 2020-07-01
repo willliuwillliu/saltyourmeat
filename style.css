@@ -403,6 +403,9 @@ footer a {
   body p {
     font-size: 18px;
   }
+  body ul {
+    font-size: 18px;
+  }
 
   #inputs {
     border: none;

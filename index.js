@@ -76,7 +76,6 @@ document.addEventListener("DOMContentLoaded", () => {
     // Prevents redirect
     const feedbackForm = document.querySelector("#feedback");
     if (feedbackForm) {
-      console.log("hi");
       feedbackForm.addEventListener("submit", (e) => {
         e.preventDefault();
         processForm(feedbackForm);
@@ -114,7 +113,6 @@ document.addEventListener("DOMContentLoaded", () => {
     let meatSelection = document.querySelector(
       'input[name="meatSelection"]:checked'
     ).value;
-    console.log(meatSelection);
 
     let meatWeight = Number(document.getElementById("meatWeight").value);
     console.log(meatWeight);
