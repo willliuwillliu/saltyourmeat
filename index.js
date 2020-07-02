@@ -1,8 +1,7 @@
 document.addEventListener("DOMContentLoaded", () => {
   document.querySelector("#howSaltyButtons").onclick = function () {
-    document.getElementById("output").scrollIntoView();
+    document.getElementById("output").scrollIntoView({ behavior: "smooth" });
   };
-
   // BEGIN FEEDBACK FORM CODE
   // Gets the data from user's previous session
   lastResult = JSON.parse(localStorage.getItem("lastResult"));
