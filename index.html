@@ -1,5 +1,5 @@
 <!doctype html>
-<html>
+<html lang="en">
     <head>
         <!-- Google Tag Manager -->
         <script>
@@ -15,15 +15,10 @@
         <link rel="icon" href="favicon.png">
         <meta property=”og:image” content="salt.svg" />
         <meta property=”og:description” content="Plug in the type of salt and cut of meat you have, and this calculator will tell you how much salt to use!"/>
-        <style>
-            @import url('https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@300;400;700&family=Source+Sans+Pro:ital,wght@0,300;0,400;0,700;1,300;1,400;1,700&display=swap');
-        </style>
-    
+        <link href="https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@300;400;500;700&family=Source+Sans+Pro:ital,wght@0,300;0,400;0,700;1,400&display=swap" rel="stylesheet">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
         <title>Dry Brining Calculator</title>
         <meta name="description" content="This is a dry brining (meat salting) calculator. If you are asking yourself, 'How much salt should I use for my steak, chicken, or pork' then this calculator is for you!">
-        <!—- ShareThis BEGIN -—>
-        <script async src="https://platform-api.sharethis.com/js/sharethis.js#property=5efa8374678aaf0012f25cdc&product=sticky-share-buttons"></script>
-        <!—- ShareThis END -—>
     </head>
    
     <body>
@@ -35,7 +30,6 @@
         <!-- End Google Tag Manager (noscript) -->
 
         <header>
-            <meta name="viewport" content="width=device-width, initial-scale=1">
             <h1 id="logo">Salt Your Meat</h1>
             <nav>
                 <ul>
@@ -93,10 +87,10 @@
         <!-- END FEEDBACK FORMS -->
 
         <form id="inputs" class="container" autocomplete="off">
-            <img id="saltimg" src="salt.svg">
-            <h2>What kind of meat?</h2>
+            <img alt="salt icon for dry brining calculator" id="saltimg" src="salt.svg">
+            <h2 >What kind of meat?</h2>
             <div class="form-row">
-                <div class="buttons">
+                <div class="buttons meatType">
                     <label class="radio"> 
                         <input type="radio" id="boneless" name="meatSelection" value="boneless">
                         <span class="checkmark hvr-sweep-to-bottom">Boneless</span>
@@ -113,13 +107,14 @@
                         <input type="radio" id="bonelin" name="meatSelection" value="bonein">
                         <span class="checkmark hvr-sweep-to-bottom">Bone-in</span>
                     </label>
-
                 </div>
             </div>
 
             <h2>How much does the meat weigh?</h2>
             <div id="meatWeightContainer">
-                <input type="number" id="meatWeight" name="meatWeight">
+                <label>
+                    <input type="number" id="meatWeight" name="meatWeight">
+                </label>
                 <label class="weightradio"> 
                     <input type="radio" id="meatWeightLb" name="meatWeightSelection" class="radio" value="lbs">
                     <div  class="checkmark meatWeightLb hvr-sweep-to-bottom">lbs</div>
@@ -167,16 +162,16 @@
                 </div>
             </div>
             
-            <h2>How salty do you like your food?</h2>
+            <h2> How salty do you like your food?</h2>
             <div class="form-row">
-                <div class="buttons">
+                <div class="buttons" id="howSaltyButtons">
                     <label class="radio"> 
                         <input type="radio" id="lessSalty" name="saltPreference" value="lessSalty">
                         <span class="checkmark hvr-sweep-to-bottom">Less salty</span>
                     </label>
                     <label class="radio"> 
                         <input type="radio" id="normalSalty" name="saltPreference" value="normalSalty">
-                        <span class="checkmark hvr-sweep-to-bottom">Normal</span>
+                        <span class="checkmark hvr-sweep-to-bottom"></a>Normal</span>
                     </label>
                     <label class="radio"> 
                         <input type="radio" id="moreSalty" name="saltPreference" value="moreSalty">
@@ -186,7 +181,7 @@
             </div>
 
         </form>
-        <div class="output container">
+        <div id="output" class="output container">
             <h2>Salting suggestion:</h2>
             <p id="outputDescription">Please fill out form</p>
             <p id="outputNote"></p>
@@ -219,6 +214,6 @@
     <footer>
         <p>Made with ❤️ from Seattle</p>
         <p>Salt Icon made by <a href="https://www.flaticon.com/authors/freepik" title="Freepik">Freepik</a></p>
-        <style>.bmc-button img{height: 18px !important;width: 20px !important;margin-bottom: 1px !important;box-shadow: none !important;border: none !important;vertical-align: middle !important;}.bmc-button{padding: 7px 15px 7px 10px !important;line-height: 15px !important;height:30px !important;text-decoration: none !important;display:inline-flex !important;color:#000000 !important;background-color:#FFFFFF !important;border-radius: 5px !important;border: 1px solid transparent !important;padding: 7px 15px 7px 10px !important;font-size: 16px !important;letter-spacing: 0.6px !important;box-shadow: 0px 1px 2px rgba(190, 190, 190, 0.5) !important;-webkit-box-shadow: 0px 1px 2px 2px rgba(190, 190, 190, 0.5) !important;margin: 0 auto !important;font-family:'Cookie', cursive !important;-webkit-box-sizing: border-box !important;box-sizing: border-box !important;}.bmc-button:hover, .bmc-button:active, .bmc-button:focus {-webkit-box-shadow: 0px 1px 2px 2px rgba(190, 190, 190, 0.5) !important;text-decoration: none !important;box-shadow: 0px 1px 2px 2px rgba(190, 190, 190, 0.5) !important;opacity: 0.85 !important;color:#000000 !important;}</style><link href="https://fonts.googleapis.com/css?family=Cookie" rel="stylesheet"><a class="bmc-button" target="_blank" href="https://www.buymeacoffee.com/willliuwillliu"><img src="https://cdn.buymeacoffee.com/buttons/bmc-new-btn-logo.svg" alt="Buy me a coffee"><span style="margin-left:5px;font-size:16px !important;">Buy me a coffee</span></a>
+        <style>.bmc-button img{height: 18px !important;width: 20px !important;margin-bottom: 1px !important;box-shadow: none !important;border: none !important;vertical-align: middle !important;}.bmc-button{padding: 7px 15px 7px 10px !important;line-height: 15px !important;height:30px !important;text-decoration: none !important;display:inline-flex !important;color:#000000 !important;background-color:#FFFFFF !important;border-radius: 5px !important;border: 1px solid transparent !important;padding: 7px 15px 7px 10px !important;font-size: 16px !important;letter-spacing: 0.6px !important;box-shadow: 0px 1px 2px rgba(190, 190, 190, 0.5) !important;-webkit-box-shadow: 0px 1px 2px 2px rgba(190, 190, 190, 0.5) !important;margin: 0 auto !important;font-family:'Cookie', cursive !important;-webkit-box-sizing: border-box !important;box-sizing: border-box !important;}.bmc-button:hover, .bmc-button:active, .bmc-button:focus {-webkit-box-shadow: 0px 1px 2px 2px rgba(190, 190, 190, 0.5) !important;text-decoration: none !important;box-shadow: 0px 1px 2px 2px rgba(190, 190, 190, 0.5) !important;opacity: 0.85 !important;color:#000000 !important;}</style><link href="https://fonts.googleapis.com/css?family=Cookie" rel="stylesheet"><a class="bmc-button" target="_blank" rel="noreferrer" href="https://www.buymeacoffee.com/willliuwillliu"><img src="https://cdn.buymeacoffee.com/buttons/bmc-new-btn-logo.svg" alt="Buy me a coffee"><span style="margin-left:5px;font-size:16px !important;">Buy me a coffee</span></a>
     </footer>
 </html>

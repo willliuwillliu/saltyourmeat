@@ -1,8 +1,11 @@
 document.addEventListener("DOMContentLoaded", () => {
+  document.querySelector("#howSaltyButtons").onclick = function () {
+    document.getElementById("output").scrollIntoView();
+  };
+
   // BEGIN FEEDBACK FORM CODE
   // Gets the data from user's previous session
   lastResult = JSON.parse(localStorage.getItem("lastResult"));
-  console.log(lastResult);
 
   if (lastResult != null) {
     document.getElementById("feedback").style.display = "block";
@@ -113,34 +116,16 @@ document.addEventListener("DOMContentLoaded", () => {
     let meatSelection = document.querySelector(
       'input[name="meatSelection"]:checked'
     ).value;
-
     let meatWeight = Number(document.getElementById("meatWeight").value);
-    console.log(meatWeight);
-
     let meatWeightSelection = document.querySelector(
       'input[name="meatWeightSelection"]:checked'
     ).value;
-    console.log(meatWeightSelection);
-
     let saltSelection = document.querySelector(
       'input[name="saltSelection"]:checked'
     ).value;
-
-    console.log(saltSelection);
-
     let saltPreference = document.querySelector(
       'input[name="saltPreference"]:checked'
     ).value;
-    console.log(saltPreference);
-
-    console.log(
-      meatSelection,
-      saltSelection,
-      saltPreference,
-      meatWeightSelection,
-      meatWeight
-    );
-
     // Convert meatWeight into grams
     if (meatWeightSelection === "lbs") {
       // 453.592 grams per lb
@@ -150,7 +135,6 @@ document.addEventListener("DOMContentLoaded", () => {
       meatWeightGrams = meatWeight * 1000;
     }
 
-    console.log(meatWeightGrams);
     // Find salt weight in grams, depending on meat type
     bonelessSaltByWeight = 0.01;
     boneinSaltByWeight = 0.0125;
@@ -244,6 +228,5 @@ document.addEventListener("DOMContentLoaded", () => {
       saltWeightTsp: saltWeightTsp,
     };
     localStorage.setItem("lastResult", JSON.stringify(result));
-    console.log("result saved");
   };
 });
