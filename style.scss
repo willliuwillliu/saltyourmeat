@@ -15,6 +15,10 @@ h3 {
   font-weight: 300;
 }
 
+b {
+  font-weight: 700;
+}
+
 h2 {
   scroll-margin: 20px;
   margin-top: 15px;
@@ -353,10 +357,6 @@ body {
     font-size: 24px;
   }
 
-  p {
-    font-size: 16px;
-    color: $accent;
-  }
   #closeFeedback {
     font-size: 22px;
     padding: 15px;
@@ -432,12 +432,6 @@ footer {
   body {
     // width: 100vw;
     margin: 10px;
-    p {
-      font-size: 18px;
-    }
-    ul {
-      font-size: 18px;
-    }
   }
 
   #inputs {
@@ -457,11 +451,9 @@ footer {
   }
 
   .feedback {
+    margin: 30px auto 0px auto;
     h3 {
       font-size: 24px;
-    }
-    p {
-      font-size: 14px;
     }
     .feedbackButtons {
       margin-bottom: 0px;
