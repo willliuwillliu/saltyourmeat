@@ -179,7 +179,7 @@ document.addEventListener("DOMContentLoaded", () => {
     // OUTPUT
     document.querySelector(
       "#outputDescription"
-    ).innerHTML = `For <span id="outputNumber"></span> <span id="outputWeightMeasurment"></span> of <span id="meatType"></span><span id="meatOrFish"></span>, use <span id="saltWeightGrams"></span ><span id="saltWeightTbsp"></span><span id="saltWeightTsp"></span>. Salt <span id="brineMin"></span> before or up to <span id="brineMax">24 hours</span> before cooking.</p>`;
+    ).innerHTML = `For <span id="outputNumber"></span> <span id="outputWeightMeasurment"></span> of <span id="meatType"></span><span id="meatOrFish"></span>, <b>use <span id="saltWeightGrams"></span ><span id="saltWeightTbsp"></span><span id="saltWeightTsp"></span>.</b> Salt <span id="brineMin"></span> before or up to <span id="brineMax">24 hours</span> before cooking.</p>`;
 
     document.querySelector("#outputNumber").innerHTML = `${meatWeight}`;
     // If meat weight = 1, display lb/kg, otherwise display lbs/kgs
@@ -218,7 +218,7 @@ document.addEventListener("DOMContentLoaded", () => {
       document.querySelector("#brineMax").innerHTML = `10 minutes`;
     }
     document.querySelector("#outputNote").innerHTML =
-      "<i><p>Please note that <b>this calculator spits out general guidelines</b>. Everyone's preferences for salt intake are different, and the amount of salt you're using will likely vary depending on the dish you are using. This suggestion is meant to be a starting point. </p><p>Additionally, this suggestion will be saved. The next time you visit this site, we'll pull it up and you can tell us how it worked out for you if you'd like. Your feedback will help improve calculations in the future!</p></i>";
+      "<i><p>Keep in mind that<b> this calculator provides general guidelines</b>, and your preference for saltiness may vary. Please use this suggestion as a starting point! </p></i>";
 
     let result = {
       meatSelection: meatSelection,
