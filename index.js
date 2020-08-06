@@ -1,13 +1,12 @@
 document.addEventListener("DOMContentLoaded", () => {
-  // Smooth scroll if the form is completely filled, otherwise alert the user that not everything is finished
-
-  document.querySelector("#howSaltyButtons").onclick = function () {
-    document.getElementById("output").scrollIntoView({
-      behavior: "smooth",
-      block: "start",
-      inline: "nearest",
-    });
-  };
+  // // Smooth scroll if the form is completely filled, otherwise alert the user that not everything is finished
+  // document.querySelector("#howSaltyButtons").onclick = function () {
+  //   document.getElementById("output").scrollIntoView({
+  //     behavior: "smooth",
+  //     block: "start",
+  //     inline: "nearest",
+  //   });
+  // };
 
   // BEGIN FEEDBACK FORM CODE
   // Gets the data from user's previous session
