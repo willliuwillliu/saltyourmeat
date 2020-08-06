@@ -218,7 +218,7 @@ document.addEventListener("DOMContentLoaded", () => {
       document.querySelector("#brineMax").innerHTML = `10 minutes`;
     }
     document.querySelector("#outputNote").innerHTML =
-      "<i><p>Keep in mind that<b> this calculator provides general guidelines</b>, and your preference for saltiness may vary. Please use this suggestion as a starting point! </p></i>";
+      "<i><p>Keep in mind that<b> this calculator provides general guidelines</b> and your preference for saltiness may vary. Please use this suggestion as a starting point! </p></i>";
 
     let result = {
       meatSelection: meatSelection,
